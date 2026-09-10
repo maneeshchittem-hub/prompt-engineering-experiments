@@ -1,210 +1,226 @@
 ========================================
-EXPERIMENT 1: ZERO-SHOT VS FEW-SHOT
+EXPERIMENT 1 RESULTS
+ZERO-SHOT VS FEW-SHOT
 ========================================
-
-TASK:
-Classify customer reviews as Positive, Negative, or Neutral.
 
 
 ========================================
-PART A — ZERO-SHOT PROMPTS
+PART A — ZERO-SHOT RESULTS
 ========================================
 
 TEST 1
 
-Prompt:
-
-Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
-
-Review:
+Input:
 "The product arrived two days late, but the quality is excellent and I am happy with my purchase."
 
-Return only one label: Positive, Negative, or Neutral.
+Actual Gemini Output:
+Positive
+
+Expected:
+Positive
+
+Result:
+PASS
 
 
 ----------------------------------------
 
 TEST 2
 
-Prompt:
-
-Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
-
-Review:
+Input:
 "The headphones stopped working after only three days. Very disappointed with this purchase."
 
-Return only one label: Positive, Negative, or Neutral.
+Actual Gemini Output:
+Negative
+
+Expected:
+Negative
+
+Result:
+PASS
 
 
 ----------------------------------------
 
 TEST 3
 
-Prompt:
-
-Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
-
-Review:
+Input:
 "The package arrived today. The box was sealed properly and everything was included."
 
-Return only one label: Positive, Negative, or Neutral.
+Actual Gemini Output:
+Negative
+
+Expected:
+Neutral
+
+Result:
+FAIL
 
 
 ----------------------------------------
 
 TEST 4
 
-Prompt:
-
-Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
-
-Review:
+Input:
 "I absolutely love this laptop. It is fast, reliable, and worth every rupee."
 
-Return only one label: Positive, Negative, or Neutral.
+Actual Gemini Output:
+Positive
+
+Expected:
+Positive
+
+Result:
+PASS
 
 
 ----------------------------------------
 
 TEST 5
 
-Prompt:
-
-Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
-
-Review:
+Input:
 "The delivery was late and customer support did not respond to my messages."
 
-Return only one label: Positive, Negative, or Neutral.
+Actual Gemini Output:
+Negative
+
+Expected:
+Negative
+
+Result:
+PASS
 
 
 ========================================
-PART B — FEW-SHOT PROMPTS
+ZERO-SHOT SUMMARY
+========================================
+
+Correct: 4/5
+
+Accuracy: 80%
+
+
+========================================
+PART B — FEW-SHOT RESULTS
 ========================================
 
 TEST 1
 
-Prompt:
-
-Classify the sentiment of a customer review as Positive, Negative, or Neutral.
-
-Examples:
-
-Review: "I love this phone. The camera quality is amazing."
-Sentiment: Positive
-
-Review: "The product broke after one day and I am very disappointed."
-Sentiment: Negative
-
-Review: "The package arrived today and everything was included."
-Sentiment: Neutral
-
-Now classify this review:
-
+Input:
 "The product arrived two days late, but the quality is excellent and I am happy with my purchase."
 
-Return only one label: Positive, Negative, or Neutral.
+Gemini Output:
+Positive
+
+Expected:
+Positive
+
+Result:
+PASS
 
 
 ----------------------------------------
 
 TEST 2
 
-Prompt:
-
-Classify the sentiment of a customer review as Positive, Negative, or Neutral.
-
-Examples:
-
-Review: "I love this phone. The camera quality is amazing."
-Sentiment: Positive
-
-Review: "The product broke after one day and I am very disappointed."
-Sentiment: Negative
-
-Review: "The package arrived today and everything was included."
-Sentiment: Neutral
-
-Now classify this review:
-
+Input:
 "The headphones stopped working after only three days. Very disappointed with this purchase."
 
-Return only one label: Positive, Negative, or Neutral.
+Gemini Output:
+Negative
+
+Expected:
+Negative
+
+Result:
+PASS
 
 
 ----------------------------------------
 
 TEST 3
 
-Prompt:
-
-Classify the sentiment of a customer review as Positive, Negative, or Neutral.
-
-Examples:
-
-Review: "I love this phone. The camera quality is amazing."
-Sentiment: Positive
-
-Review: "The product broke after one day and I am very disappointed."
-Sentiment: Negative
-
-Review: "The package arrived today and everything was included."
-Sentiment: Neutral
-
-Now classify this review:
-
+Input:
 "The package arrived today. The box was sealed properly and everything was included."
 
-Return only one label: Positive, Negative, or Neutral.
+Gemini Output:
+Neutral
+
+Expected:
+Neutral
+
+Result:
+PASS
 
 
 ----------------------------------------
 
 TEST 4
 
-Prompt:
-
-Classify the sentiment of a customer review as Positive, Negative, or Neutral.
-
-Examples:
-
-Review: "I love this phone. The camera quality is amazing."
-Sentiment: Positive
-
-Review: "The product broke after one day and I am very disappointed."
-Sentiment: Negative
-
-Review: "The package arrived today and everything was included."
-Sentiment: Neutral
-
-Now classify this review:
-
+Input:
 "I absolutely love this laptop. It is fast, reliable, and worth every rupee."
 
-Return only one label: Positive, Negative, or Neutral.
+Gemini Output:
+Positive
+
+Expected:
+Positive
+
+Result:
+PASS
 
 
 ----------------------------------------
 
 TEST 5
 
-Prompt:
-
-Classify the sentiment of a customer review as Positive, Negative, or Neutral.
-
-Examples:
-
-Review: "I love this phone. The camera quality is amazing."
-Sentiment: Positive
-
-Review: "The product broke after one day and I am very disappointed."
-Sentiment: Negative
-
-Review: "The package arrived today and everything was included."
-Sentiment: Neutral
-
-Now classify this review:
-
+Input:
 "The delivery was late and customer support did not respond to my messages."
 
-Return only one label: Positive, Negative, or Neutral.
+Gemini Output:
+Negative
+
+Expected:
+Negative
+
+Result:
+PASS
+
+
+========================================
+FEW-SHOT SUMMARY
+========================================
+
+Correct: 5/5
+
+Accuracy: 100%
+
+
+========================================
+COMPARISON
+========================================
+
+Zero-shot accuracy: 80%
+
+Few-shot accuracy: 100%
+
+Improvement: 20 percentage points
+
+
+========================================
+ANALYSIS
+========================================
+
+The zero-shot approach correctly classified 4 out of 5 reviews.
+The model incorrectly classified the neutral review as negative.
+
+The few-shot approach correctly classified all 5 reviews.
+Providing three labeled examples helped the model understand
+the expected classification categories more clearly.
+
+The biggest improvement was seen in the neutral example.
+The few-shot examples showed the model what a neutral review
+should look like, which improved consistency.
+
+Therefore, in this experiment, few-shot prompting performed
+better than zero-shot prompting.
