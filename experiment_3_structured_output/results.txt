@@ -1,0 +1,328 @@
+========================================
+EXPERIMENT 3: STRUCTURED JSON OUTPUT
+========================================
+
+
+TASK:
+
+Test whether the model can consistently return valid JSON
+that follows a predefined schema for different inputs.
+
+
+========================================
+JSON SCHEMA
+========================================
+
+{
+  "name": "string",
+  "date": "string",
+  "amount": 0
+}
+
+
+========================================
+TEST 1
+========================================
+
+INPUT:
+
+Hi, this is Rahul. I purchased the laptop on 15 August 2026
+for ₹55,000.
+
+
+EXPECTED OUTPUT:
+
+{
+  "name": "Rahul",
+  "date": "15 August 2026",
+  "amount": 55000
+}
+
+
+GEMINI OUTPUT:
+
+{
+  "name": "Rahul",
+  "date": "15 August 2026",
+  "amount": 55000
+}
+
+
+VALID JSON:
+
+YES
+
+
+SCHEMA MATCH:
+
+YES
+
+
+RESULT:
+
+PASS
+
+
+========================================
+TEST 2
+========================================
+
+INPUT:
+
+Priya placed an order for a smartwatch on 22 August 2026.
+The total amount was Rs. 8,999.
+
+
+EXPECTED OUTPUT:
+
+{
+  "name": "Priya",
+  "date": "22 August 2026",
+  "amount": 8999
+}
+
+
+GEMINI OUTPUT:
+
+{
+  "name": "Priya",
+  "date": "22 August 2026",
+  "amount": 8999
+}
+
+
+VALID JSON:
+
+YES
+
+
+SCHEMA MATCH:
+
+YES
+
+
+RESULT:
+
+PASS
+
+
+========================================
+TEST 3
+========================================
+
+INPUT:
+
+My name is Arjun and I bought a keyboard yesterday,
+28 August 2026, for 2,499 rupees.
+
+
+EXPECTED OUTPUT:
+
+{
+  "name": "Arjun",
+  "date": "28 August 2026",
+  "amount": 2499
+}
+
+
+GEMINI OUTPUT:
+
+{
+  "name": "Arjun",
+  "date": "28 August 2026",
+  "amount": 2499
+}
+
+
+VALID JSON:
+
+YES
+
+
+SCHEMA MATCH:
+
+YES
+
+
+RESULT:
+
+PASS
+
+
+========================================
+TEST 4
+========================================
+
+INPUT:
+
+The customer, Sneha, made a payment of ₹12,500 on
+September 1, 2026 for her new monitor.
+
+
+EXPECTED OUTPUT:
+
+{
+  "name": "Sneha",
+  "date": "September 1, 2026",
+  "amount": 12500
+}
+
+
+GEMINI OUTPUT:
+
+{
+  "name": "Sneha",
+  "date": "September 1, 2026",
+  "amount": 12500
+}
+
+
+VALID JSON:
+
+YES
+
+
+SCHEMA MATCH:
+
+YES
+
+
+RESULT:
+
+PASS
+
+
+========================================
+TEST 5
+========================================
+
+INPUT:
+
+On 3 September 2026, Vikram purchased headphones worth
+₹3,200.
+
+
+EXPECTED OUTPUT:
+
+{
+  "name": "Vikram",
+  "date": "3 September 2026",
+  "amount": 3200
+}
+
+
+GEMINI OUTPUT:
+
+{
+  "name": "Vikram",
+  "date": "3 September 2026",
+  "amount": 3200
+}
+
+
+VALID JSON:
+
+YES
+
+
+SCHEMA MATCH:
+
+YES
+
+
+RESULT:
+
+PASS
+
+
+========================================
+SUMMARY
+========================================
+
+Total test inputs: 5
+
+Valid JSON outputs: 5 / 5
+
+Schema matches: 5 / 5
+
+Successful extractions: 5 / 5
+
+Success rate: 100%
+
+
+========================================
+PROMPT TECHNIQUES USED
+========================================
+
+1. Explicit JSON schema
+
+The prompt clearly defined the required fields:
+
+name, date, amount
+
+
+2. Exact field names
+
+The model was instructed to use exactly:
+
+"name"
+"date"
+"amount"
+
+
+3. JSON-only instruction
+
+The model was instructed to return only JSON
+without explanations or Markdown.
+
+
+4. Data type instructions
+
+The amount was required to be a number rather than
+a string.
+
+For example:
+
+"amount": 55000
+
+
+5. No additional fields
+
+The prompt instructed the model not to create
+extra fields.
+
+
+6. Missing-value handling
+
+The prompt specified what to return when information
+is unavailable.
+
+
+========================================
+ANALYSIS
+========================================
+
+The structured output prompt successfully extracted the
+required information from all five test inputs.
+
+The explicit schema helped maintain a consistent output
+format. The JSON-only instruction prevented additional
+explanations from being included.
+
+The field-name and data-type requirements also improved
+consistency across different input formats, including
+currency symbols such as ₹ and Rs.
+
+
+========================================
+CONCLUSION
+========================================
+
+The experiment demonstrates that explicit schema instructions,
+JSON-only formatting, exact field names, and clear data-type
+requirements can improve the reliability of structured output.
+
+The model successfully returned the required information in
+the defined JSON structure for all five test cases.
+
+Overall success rate: 100%.

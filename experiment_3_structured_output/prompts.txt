@@ -1,0 +1,90 @@
+========================================
+EXPERIMENT 3: STRUCTURED JSON OUTPUT
+========================================
+
+TASK:
+
+Extract a person's name, transaction date, and transaction
+amount from customer transaction text.
+
+The output must be a valid JSON object using exactly the
+following schema:
+
+{
+  "name": "string",
+  "date": "string",
+  "amount": 0
+}
+
+
+========================================
+PROMPT
+========================================
+
+You are an information extraction system.
+
+Extract the person's name, transaction date, and transaction
+amount from the provided text.
+
+You MUST return a single valid JSON object.
+
+Use exactly this schema:
+
+{
+  "name": "string",
+  "date": "string",
+  "amount": 0
+}
+
+Rules:
+
+1. Return JSON only.
+2. Do not use Markdown code fences.
+3. Do not add explanations.
+4. Use exactly these field names:
+   name, date, amount
+5. Convert currency amounts to numbers without currency
+   symbols or commas.
+6. Do not create additional fields.
+7. If a value is not available, use an empty string for
+   name/date and 0 for amount.
+
+
+========================================
+TEST INPUT 1
+========================================
+
+Hi, this is Rahul. I purchased the laptop on 15 August 2026
+for ₹55,000.
+
+
+========================================
+TEST INPUT 2
+========================================
+
+Priya placed an order for a smartwatch on 22 August 2026.
+The total amount was Rs. 8,999.
+
+
+========================================
+TEST INPUT 3
+========================================
+
+My name is Arjun and I bought a keyboard yesterday,
+28 August 2026, for 2,499 rupees.
+
+
+========================================
+TEST INPUT 4
+========================================
+
+The customer, Sneha, made a payment of ₹12,500 on
+September 1, 2026 for her new monitor.
+
+
+========================================
+TEST INPUT 5
+========================================
+
+On 3 September 2026, Vikram purchased headphones worth
+₹3,200.

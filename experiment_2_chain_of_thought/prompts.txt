@@ -1,0 +1,36 @@
+========================================
+EXPERIMENT 2: CHAIN-OF-THOUGHT PROMPTING
+========================================
+
+TASK:
+Compare a direct prompt with a prompt that asks the model
+to think step by step when solving a multi-step math problem.
+
+
+========================================
+TEST 1: DIRECT PROMPT
+========================================
+
+Prompt:
+
+Solve the following problem and give the final answer.
+
+A shop sells notebooks for ₹40 each and pens for ₹15 each.
+Maneesh buys 5 notebooks and 4 pens. He pays with ₹500.
+
+How much change should he receive?
+
+
+========================================
+TEST 2: CHAIN-OF-THOUGHT PROMPT
+========================================
+
+Prompt:
+
+Solve the following problem. Think step by step and then give
+the final answer.
+
+A shop sells notebooks for ₹40 each and pens for ₹15 each.
+Maneesh buys 5 notebooks and 4 pens. He pays with ₹500.
+
+How much change should he receive?

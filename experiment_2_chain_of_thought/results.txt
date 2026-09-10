@@ -1,0 +1,134 @@
+========================================
+EXPERIMENT 2: CHAIN-OF-THOUGHT PROMPTING
+========================================
+
+
+TASK:
+Compare a direct prompt with a prompt that asks the model
+to think step by step when solving a multi-step math problem.
+
+
+========================================
+TEST 1: DIRECT PROMPT
+========================================
+
+Prompt:
+
+Solve the following problem and give the final answer.
+
+A shop sells notebooks for ₹40 each and pens for ₹15 each.
+Maneesh buys 5 notebooks and 4 pens. He pays with ₹500.
+
+How much change should he receive?
+
+
+RAW GEMINI OUTPUT:
+
+The total cost of the notebooks is 5 × ₹40 = ₹200.
+The total cost of the pens is 4 × ₹15 = ₹60.
+Total cost = ₹200 + ₹60 = ₹260.
+Change = ₹500 - ₹260 = ₹240.
+
+The change should be ₹240.
+
+
+EXPECTED ANSWER:
+
+₹240
+
+
+RESULT:
+
+PASS
+
+
+========================================
+TEST 2: CHAIN-OF-THOUGHT PROMPT
+========================================
+
+Prompt:
+
+Solve the following problem. Think step by step and then give
+the final answer.
+
+A shop sells notebooks for ₹40 each and pens for ₹15 each.
+Maneesh buys 5 notebooks and 4 pens. He pays with ₹500.
+
+How much change should he receive?
+
+
+RAW GEMINI OUTPUT:
+
+First, calculate the cost of the notebooks:
+
+5 × ₹40 = ₹200
+
+Next, calculate the cost of the pens:
+
+4 × ₹15 = ₹60
+
+Now calculate the total amount spent:
+
+₹200 + ₹60 = ₹260
+
+Finally, calculate the change:
+
+₹500 - ₹260 = ₹240
+
+Therefore, Maneesh should receive ₹240 as change.
+
+
+EXPECTED ANSWER:
+
+₹240
+
+
+RESULT:
+
+PASS
+
+
+========================================
+COMPARISON
+========================================
+
+Direct Prompt:
+
+The direct prompt asks the model to solve the problem and
+provide the final answer. The model correctly calculated the
+total cost and the change.
+
+
+Chain-of-Thought Prompt:
+
+The chain-of-thought prompt asks the model to reason through
+the problem step by step before providing the final answer.
+The calculation is clearly divided into smaller steps.
+
+
+OBSERVATION:
+
+Both prompts produced the correct answer of ₹240.
+
+The direct prompt was sufficient for this simple problem.
+The chain-of-thought prompt provided a more structured solution
+that makes the calculation easier to follow and verify.
+
+
+ACCURACY:
+
+Direct Prompt: 1 / 1
+
+Chain-of-Thought Prompt: 1 / 1
+
+
+CONCLUSION:
+
+For this simple multi-step mathematical problem, both prompts
+produced the correct answer.
+
+The chain-of-thought prompt made the reasoning process more
+structured and easier to verify. However, because the problem
+was relatively simple, there was no improvement in accuracy.
+The main improvement was in the clarity and step-by-step
+presentation of the solution.

@@ -1,0 +1,210 @@
+========================================
+EXPERIMENT 1: ZERO-SHOT VS FEW-SHOT
+========================================
+
+TASK:
+Classify customer reviews as Positive, Negative, or Neutral.
+
+
+========================================
+PART A — ZERO-SHOT PROMPTS
+========================================
+
+TEST 1
+
+Prompt:
+
+Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
+
+Review:
+"The product arrived two days late, but the quality is excellent and I am happy with my purchase."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+----------------------------------------
+
+TEST 2
+
+Prompt:
+
+Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
+
+Review:
+"The headphones stopped working after only three days. Very disappointed with this purchase."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+----------------------------------------
+
+TEST 3
+
+Prompt:
+
+Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
+
+Review:
+"The package arrived today. The box was sealed properly and everything was included."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+----------------------------------------
+
+TEST 4
+
+Prompt:
+
+Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
+
+Review:
+"I absolutely love this laptop. It is fast, reliable, and worth every rupee."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+----------------------------------------
+
+TEST 5
+
+Prompt:
+
+Classify the sentiment of the following customer review as Positive, Negative, or Neutral.
+
+Review:
+"The delivery was late and customer support did not respond to my messages."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+========================================
+PART B — FEW-SHOT PROMPTS
+========================================
+
+TEST 1
+
+Prompt:
+
+Classify the sentiment of a customer review as Positive, Negative, or Neutral.
+
+Examples:
+
+Review: "I love this phone. The camera quality is amazing."
+Sentiment: Positive
+
+Review: "The product broke after one day and I am very disappointed."
+Sentiment: Negative
+
+Review: "The package arrived today and everything was included."
+Sentiment: Neutral
+
+Now classify this review:
+
+"The product arrived two days late, but the quality is excellent and I am happy with my purchase."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+----------------------------------------
+
+TEST 2
+
+Prompt:
+
+Classify the sentiment of a customer review as Positive, Negative, or Neutral.
+
+Examples:
+
+Review: "I love this phone. The camera quality is amazing."
+Sentiment: Positive
+
+Review: "The product broke after one day and I am very disappointed."
+Sentiment: Negative
+
+Review: "The package arrived today and everything was included."
+Sentiment: Neutral
+
+Now classify this review:
+
+"The headphones stopped working after only three days. Very disappointed with this purchase."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+----------------------------------------
+
+TEST 3
+
+Prompt:
+
+Classify the sentiment of a customer review as Positive, Negative, or Neutral.
+
+Examples:
+
+Review: "I love this phone. The camera quality is amazing."
+Sentiment: Positive
+
+Review: "The product broke after one day and I am very disappointed."
+Sentiment: Negative
+
+Review: "The package arrived today and everything was included."
+Sentiment: Neutral
+
+Now classify this review:
+
+"The package arrived today. The box was sealed properly and everything was included."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+----------------------------------------
+
+TEST 4
+
+Prompt:
+
+Classify the sentiment of a customer review as Positive, Negative, or Neutral.
+
+Examples:
+
+Review: "I love this phone. The camera quality is amazing."
+Sentiment: Positive
+
+Review: "The product broke after one day and I am very disappointed."
+Sentiment: Negative
+
+Review: "The package arrived today and everything was included."
+Sentiment: Neutral
+
+Now classify this review:
+
+"I absolutely love this laptop. It is fast, reliable, and worth every rupee."
+
+Return only one label: Positive, Negative, or Neutral.
+
+
+----------------------------------------
+
+TEST 5
+
+Prompt:
+
+Classify the sentiment of a customer review as Positive, Negative, or Neutral.
+
+Examples:
+
+Review: "I love this phone. The camera quality is amazing."
+Sentiment: Positive
+
+Review: "The product broke after one day and I am very disappointed."
+Sentiment: Negative
+
+Review: "The package arrived today and everything was included."
+Sentiment: Neutral
+
+Now classify this review:
+
+"The delivery was late and customer support did not respond to my messages."
+
+Return only one label: Positive, Negative, or Neutral.
